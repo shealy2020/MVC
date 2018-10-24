@@ -15,14 +15,17 @@
         git add <file>  //stages file(s)
     commit change
         git commit -m "This is a commit message!"  //creates a local commit, which are not yet pushed to origin.
-    create a pull request
+    ALT-1: create a pull request
         1.	Go to https://ingeniuxdev.visualstudio.com/Ingeniux/
         2.	From menu select Code > Pull Requests > New pull request.
         3.	Change selections in Base-to-Target drop-down menus to the following: documentation > develop.
             Note: Develop will be under the All branches tab.
         4.	Enter a description, etc.
         5.	Click Create.
-
+    ALT-2: push to remote 
+            git push origin doc1  //updates the remote doc1 with the local doc1
+    ALT-3: merge w. remote
+            git merge origin dev1
     -->
 
 <p>Use this area to provide additional information.</p>
