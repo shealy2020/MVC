@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Intention:</p>
+    <ul>
+        <li>
+            get the most up-to-date version from (origin/develop) <ul>
+                <li>git status --branch //find out which local branch I’m on.</li>
+                <li>
+                    git checkout documentation //If I need to switch to documentation from
+                    another local branch.
+                </li>
+                <li>
+                    git pull origin develop //pulls down remote dev1 changes to local, checked
+                    out branch (e.g., doc1). Pull command also tries to merge dev1 and doc1 if
+                    changes in doc1 exists.
+                </li>
+            </ul>
+        </li>
+        <li>
+            edit file(s) <ul>
+                <li>git status //status shows which files have been modified</li>
+            </ul>
+        </li>
+        <li>
+            stages file(s) in preparation for commit <ul>
+                <li>git add [file] //stages file(s)</li>
+                <li>git add -A  //adds all unstaged (and untracked) files</li>
+            </ul>
+        </li>
+        <li>
+            commit change <ul>
+                <li>
+                    git commit -m "This is a commit message!" //creates a local commit, which
+                    are not yet pushed to origin.
+                </li>
+                <li>
+                    git commit -a -m "This is a commit message!" //commits all (-a) local
+                    changes w/o staging (git add) them.
+                </li>
+            </ul>
+        </li>
+        <li>
+            ALT-1: create a pull request <ol>
+                <li>Go to https://ingeniuxdev.visualstudio.com/Ingeniux/ </li>
+                <li>
+                    From menu select Code > Pull Requests > New pull request.<p>
+                        <b xmlns="http://www.w3.org/1999/xhtml">Update</b>: Click plus icon
+                        (+). Choose New Pull request. New navigation is a factor of new toolbar
+                        setup.
+                    </p>
+                </li>
+                <li>
+                    Change selections in Base-to-Target drop-down menus to the following:
+                    documentation > develop. <p>
+                        Note: Develop will be under the All branches
+                        tab.
+                    </p>
+                </li>
+                <li>Enter a description, etc.</li>
+                <li>Click Create.</li>
+            </ol>
+        </li>
+        <li>
+            ALT-2: push to remote <ol>
+                <li>git push origin dev1 //updates the remote doc1 with the local dev1</li>
+            </ol>
+        </li>
+        <li>
+            ALT-3: merge the doc1 into dev1 <ol>
+                <li> git checkout dev1</li>
+                <li>git merge doc1</li>
+            </ol>
+        </li>
+    </ul>
+    <pre>
+    <code>
+
+            ************************
+            Other helpful Git Commands
+            *************************
+
+            Create Branch
+            Git branch [Branch Name]
+            Push New Branch to Remote Server
+            Git push -u origin [Branch Name]
+
+            Switch to dev1
+            Git checkout dev1
+            Integrate any remote changes with local dev1
+            Git pull
+            Update the remote dev1 with local dev1, which I worked on, saved, staged, and committed.
+            git push
+
+        </code>
+
+</pre>
+</body>
+</html>
