@@ -5,7 +5,40 @@
     <title></title>
 </head>
 <body>
-    <p>Intention:</p>
+    <h3>Definitions</h3>
+    <ul>
+        <li>origin: Alias for repository (e.g., https://github.com/shealy2020/MVC.git).</li>
+    </ul>
+    <section>
+        <h3>Helpful Git Commands</h3>
+        <ul>
+            <li>git remote -v //shows all origin alias commands</li>
+            <li>git branch [Branch Name] //Create Branch</li>
+            <li>git push -u origin [Branch Name] //Push New Branch to Remote Server</li>
+            <li>git checkout develop //Switch to another local branch such as develop</li>
+            <li>
+                git pull //Once switched (to develop), integrates any remote changes with local
+                develop
+            </li>
+            <li>
+                git push //Update the remote develop with local develop, which I worked on,
+                saved, staged, and committed.
+            </li>
+            <li />
+            <li />
+            <li />
+        </ul>
+    </section>
+    <h3>Intention</h3>
+    <p>I want to do the following when I need to make a changed to Git-controlled files:</p>
+    <ol>
+        <li>Pull down origin develop branch to local documentation branch.</li>
+        <li>Change or create file(s) within VS project and save.</li>
+        <li>Stage changed or new file.</li>
+        <li>Commit file from local documentation branch to origin develop branch.</li>
+        <li>Do pull request in VSTS.</li>
+        <li></li>
+    </ol>
     <ul>
         <li>
             get the most up-to-date version from (origin/develop) <ul>
@@ -15,9 +48,9 @@
                     another local branch.
                 </li>
                 <li>
-                    git pull origin develop //pulls down remote dev1 changes to local, checked
-                    out branch (e.g., doc1). Pull command also tries to merge dev1 and doc1 if
-                    changes in doc1 exists.
+                    git pull origin develop //pulls down remote develop changes to local,
+                    checked out branch (e.g., documentation). Pull command also tries to merge
+                    develop and documentation if changes in documentation exists.
                 </li>
             </ul>
         </li>
@@ -29,7 +62,8 @@
         <li>
             stages file(s) in preparation for commit <ul>
                 <li>git add [file] //stages file(s)</li>
-                <li>git add -A  //adds all unstaged (and untracked) files</li>
+                <li>git add -A //adds all unstaged (and untracked) files</li>
+                <li>git add . //stages all files in current dir</li>
             </ul>
         </li>
         <li>
@@ -57,7 +91,7 @@
                 <li>
                     Change selections in Base-to-Target drop-down menus to the following:
                     documentation > develop. <p>
-                        Note: Develop will be under the All branches
+                        Note: develop will be under the All branches
                         tab.
                     </p>
                 </li>
@@ -67,37 +101,33 @@
         </li>
         <li>
             ALT-2: push to remote <ol>
-                <li>git push origin dev1 //updates the remote doc1 with the local dev1</li>
+                <li>
+                    git push origin develop //updates the remote documentation with the local
+                    develop
+                </li>
             </ol>
         </li>
         <li>
-            ALT-3: merge the doc1 into dev1 <ol>
-                <li> git checkout dev1</li>
-                <li>git merge doc1</li>
+            ALT-3: merge the documentation into develop<ol>
+                <li> git checkout develop</li>
+                <li>git merge documentation</li>
             </ol>
         </li>
     </ul>
     <pre>
     <code>
+How to commit changes via Command line per Arnold:
+1.	 (At this point, I’ve already made changes to VS project files.)
+2.	VS > xpas.sln > Team Explorer > Home > Changes > Actions menu > Open Command prompt. 
+3.	git pull //assuming I am on local doc branch, then this pulls down the remote doc branch to local doc branch.
+4.	git push //pushes all local doc changes to remote doc branch.
+5.	git checkout develop //checked out local dev branch
+6.	git pull //pulls down the remote dev branch to local dev branch
+7.	git checkout documentation //checks out local doc branch. Documentation BRANCH IS THE RECEIVING BRANCH FOR THE UPCOMING MERGE.
+8.	git merge develop //where develop is the local branch that will merge INTO the local receiving  branch ( i.e., documentation).
 
-            ************************
-            Other helpful Git Commands
-            *************************
-
-            Create Branch
-            Git branch [Branch Name]
-            Push New Branch to Remote Server
-            Git push -u origin [Branch Name]
-
-            Switch to dev1
-            Git checkout dev1
-            Integrate any remote changes with local dev1
-            Git pull
-            Update the remote dev1 with local dev1, which I worked on, saved, staged, and committed.
-            git push
-
-        </code>
-
-</pre>
+                
+            </code>
+        </pre>
 </body>
 </html>
