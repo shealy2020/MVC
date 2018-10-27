@@ -31,14 +31,7 @@
     </section>
     <h3>Intention</h3>
     <p>I want to do the following when I need to make a changed to Git-controlled files:</p>
-    <ol>
-        <li>Pull down origin develop branch to local documentation branch.</li>
-        <li>Change or create file(s) within VS project and save.</li>
-        <li>Stage changed or new file.</li>
-        <li>Commit file from local documentation branch to origin develop branch.</li>
-        <li>Do pull request in VSTS.</li>
-        <li></li>
-    </ol>
+    <p>See Arnold's commands below for Git workflow.</p>
     <ul>
         <li>
             get the most up-to-date version from (origin/develop) <ul>
@@ -116,19 +109,27 @@
     </ul>
     <pre>
     <code>
-How to commit changes via Command line per Arnold:
-1.	 (At this point, I’ve already made changes to VS project files.)
-2.	VS > xpas.sln > Team Explorer > Home > Changes > Actions menu > Open Command prompt. 
-3.	git pull //assuming I am on local doc branch, then this pulls down the remote doc branch to local doc branch.
-4.	git push //pushes all local doc changes to remote doc branch.
-5.	git checkout develop //checked out local dev branch
-6.	git pull //pulls down the remote dev branch to local dev branch
-7.	git checkout documentation //checks out local doc branch. Documentation BRANCH IS THE RECEIVING BRANCH FOR THE UPCOMING MERGE.
-8.	git merge develop //where develop is the local branch that will merge INTO the local receiving  branch ( i.e., documentation).
+How to commit changes via command line (per Arnold):
 
-                
+1.	(At this point, I’ve already made changes to project files with in VS UI; saved changes; staged changes; and committed changes.)
+2.	VS > xpas.sln > Team Explorer > Home > Changes > Actions menu > Open Command prompt. 
+3.	git pull //assuming I am on local documentation branch, then this pulls down the remote documentation branch to local documentation branch.
+4.	git push //pushes all local documentation changes to remote documentation branch.
+            Note: In VS, sync performs a git pull and a git push, which combines the prior pull/push. Sync is not a Git command.
+5.	git checkout develop //checks out local develop branch
+6.	git pull //pulls down the remote develop branch to local develop branch
+7.	git checkout documentation //checks out local doc branch. Documentation BRANCH IS THE RECEIVING BRANCH FOR THE UPCOMING MERGE.
+8.	git merge develop //where develop is the local branch that will merge INTO the local receiving branch ( i.e., documentation).
+9.	Create a pull request in VSTS (not per Arnold):
+    1.	Go to https://ingeniuxdev.visualstudio.com/Ingeniux/
+    2.	From menu select Code > Pull Requests > New pull request.
+            Update: Click plus icon (+) in left utility bar. Choose New Pull Request. (New navigation may be a factor of new utility bar setup in VSTS.)
+    3.	Change selections in Base-to-Target drop-down menus to the following: documentation > develop.
+            Note: develop will be under the All branches tab.
+    4.	Provide a title that begins with the VSTS ticket #.
+    5.	Enter a description, etc.
+    6.	Click Create.
             </code>
         </pre>
 </body>
 </html>
-    
